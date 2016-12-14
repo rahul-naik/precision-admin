@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>precisionadmin</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+
+  <!-- endbuild -->
+</head>
+
+<body style="padding-top:70px;">
+  <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">Precision</a>
+      </div>
+
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="logout">
+
+        <div class="comment-tabs">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="active">
+              <a href="#comments-logout" role="tab" data-toggle="tab">
+                <h4 class="reviews text-capitalize">Create New product</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#add-comment" role="tab" data-toggle="tab">
+                <h4 class="reviews text-capitalize">Manage Product</h4>
+              </a>
+            </li>
+
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="comments-logout">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <label for="firstName" class="col-sm-3 control-label">Product Category</label>
+                        <div class="col-sm-9">
+                          <input type="text" id="firstName" placeholder="Product Category" class="form-control" autofocus>
+
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">Product Type</label>
+                        <div class="col-sm-9">
+                          <input type="email" id="email" placeholder="Product Type" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">Product Name</label>
+                        <div class="col-sm-9">
+                          <input type="email" id="email" placeholder="Product Name" class="form-control">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="drop col-md-5" id="productPhoto-div">
+                        <span>Click to upload Product Photo</span>
+                        <img style="position:absolute;left:0" class="img-responsive" id="product-photo" src="" alt="" />
+
+                      </div>
+                      <input type="file" accept="image/*" style="display:none;" id="productPhoto">
+                      <div class="drop col-md-5" id="productDiagram-div">
+                        <span>Click to upload Product Diagram</span>
+                        <img style="position:absolute;left:0" class="img-responsive" id="product-img" src="" alt="" />
+
+                      </div>
+                      <input class="img-responsive" type="file" accept="image/*" style="display:none;" id="productDiagram">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-11 text-right" style="margin-top:11px;">
+                        <button class="btn btn-default"> Add </button>  
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="add-comment">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /container -->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/plugins.js -->
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/app.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
