@@ -16,6 +16,7 @@
   <!-- endbuild -->
 
   <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
@@ -64,7 +65,7 @@
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="comments-logout">
-              <div class="container">
+              <div class="">
                 <div class="row">
                   <div class="col-md-6">
                     <form class="form-horizontal" role="form">
@@ -106,16 +107,243 @@
                     </div>
                     <div class="row">
                       <div class="col-md-11 text-right" style="margin-top:11px;">
-                        <button class="btn btn-default"> Add </button>  
+                        <button class="btn btn-default"> Add </button>
                       </div>
                     </div>
 
                   </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <hr/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="motor_spec" value="">Motor Specification</label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="motor_colums">Columns (Max 5)</label>
+                      <select disabled class="form-control" id="motor_colums">
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="Motor_rows">Rows (Max 12)</label>
+                      <select disabled class="form-control" id="Motor_rows">
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
+                        <option value='11'>11</option>
+                        <option value='12'>12</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <button disabled class="btn btn-default" id="create-motor_table" onclick="createTable('motor_table')">Create table</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" id="MotortableHolder">
+                    <table class="table table-striped">
+                      <thead>
+                        <!--<tr>
+                          <th>Description</th>
+                          <th>No Load</th>
+                          <th>Full Load</th>
+                        </tr>-->
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                    <button class="btn btn-default">Add</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="gear_spec" value="">Gearbox Details</label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="gear_colums">Columns (Max 5)</label>
+                      <select disabled class="form-control" id="gear_colums">
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="gear_rows">Rows (Max 12)</label>
+                      <select disabled class="form-control" id="gear_rows">
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
+                        <option value='11'>11</option>
+                        <option value='12'>12</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <button disabled class="btn btn-default" id="create-gear_table" onclick="creategearTable('gear_table')">Create table</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" id="geartableHolder">
+                    <table class="table table-striped">
+                      <thead>
+                        <!--<tr>
+                          <th>Description</th>
+                          <th>No Load</th>
+                          <th>Full Load</th>
+                        </tr>-->
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                    <button class="btn btn-default">Add</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <hr/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="desc">Short Description (Max 300 characters):</label>
+                      <textarea class="form-control" rows="5" id="desc"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="features">Salient Features:</label>
+                      <textarea class="form-control" rows="5" id="features"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-default">SAVE PRODUCT</button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="tab-pane" id="add-comment">
-
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Photo</th>
+                        <th>Catagory</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>New Launch (only 1)</th>
+                        <th>Best Selling (Any 3)</th>
+                        <th>Banner Image (only 1)</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><img src="http://placehold.it/50x50" class="img-responsive" alt=""></td>
+                        <td>AC/DC Series Motor</td>
+                        <td>PM-1</td>
+                        <td>3 HOLES OF M 5 AT 66 PCD</td>
+                        <td><input type="radio" name="newlaunch"></td>
+                        <td><input type="checkbox" name="bestselling"></td>
+                        <td><input type="radio" name="banner"></td>
+                        <td>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-edit"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-remove"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                          </a>
+                        </td>
+                      </tr>
+                       <tr>
+                        <td>2</td>
+                        <td><img src="http://placehold.it/50x50" class="img-responsive" alt=""></td>
+                        <td>AC/DC Series Motor</td>
+                        <td>PM-1</td>
+                        <td>3 HOLES OF M 5 AT 66 PCD</td>
+                        <td><input type="radio" name="newlaunch"></td>
+                        <td><input type="checkbox" name="bestselling"></td>
+                        <td><input type="radio" name="banner"></td>
+                        <td>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-edit"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-remove"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                          </a>
+                        </td>
+                      </tr>
+                       <tr>
+                        <td>3</td>
+                        <td><img src="http://placehold.it/50x50" class="img-responsive" alt=""></td>
+                        <td>AC/DC Series Motor</td>
+                        <td>PM-1</td>
+                        <td>3 HOLES OF M 5 AT 66 PCD</td>
+                        <td><input type="radio" name="newlaunch"></td>
+                        <td><input type="checkbox" name="bestselling"></td>
+                        <td><input type="radio" name="banner"></td>
+                        <td>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-edit"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-remove"></span>
+                          </a>
+                          <a href="#">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -132,24 +360,9 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:js scripts/plugins.js -->
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+ 
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
