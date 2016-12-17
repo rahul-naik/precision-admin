@@ -8,9 +8,10 @@ $(document).ready(function () {
      * will load some test data and the loadProfile
      * will do the changes in the UI
      */
-   // testLocalStorageData();
+    // testLocalStorageData();
     // Load profile if it exits
     loadProfile();
+   
 });
 
 /**

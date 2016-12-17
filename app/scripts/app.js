@@ -24,11 +24,35 @@ $(function () {
         }
     });
 
-     $('#gear_spec').click(function () {
+    $('#gear_spec').click(function () {
         if (this.checked) {
             $("#gear_colums,#gear_rows,#create-gear_table").removeAttr("disabled");
         } else {
             $("#gear_colums,#gear_rows,#create-gear_table").attr("disabled", true);
+        }
+    });
+
+    var limit = 3;
+    $('input.single-checkbox').on('change', function (evt) {
+        if ($('input.single-checkbox:checked').length > limit) {
+            this.checked = false;
+        }
+    });
+
+    $('.edit').on('click', function (e) {
+        e.preventDefault();
+        //Do edit functionality
+        $(this).siblings('.publish').removeClass('gray-out').attr('disabled',false);
+    });
+
+    $('.publish').on('click', function (e) {
+        e.preventDefault();
+        //Do publish functionality
+        if (!$(this).attr('disabled')) {
+
+            $(this).addClass('gray-out');
+            $('#published').modal({});
+            $(this).attr('disabled', true);
         }
     });
 });
